@@ -19,12 +19,14 @@ export default function ShipModal({ ship, onClose }) {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="h-80 bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden">
-              <Canvas camera={{ position: [0, 0, 8] }}>
-                <ambientLight intensity={0.8} />
-                <directionalLight position={[10, 10, 5]} />
-                <primitive object={scene} scale={1.2} />
-                <OrbitControls />
-              </Canvas>
+              <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
+  <ambientLight intensity={0.8} />
+  <directionalLight position={[10, 10, 5]} intensity={1.5} />
+  <Suspense fallback={null}>
+    <Ship3D scene={scene} />
+  </Suspense>
+  <OrbitControls enablePan={false} maxDistance={10} minDistance={3} />
+</Canvas>
             </div>
 
             <div>

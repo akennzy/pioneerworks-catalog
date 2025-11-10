@@ -2,6 +2,9 @@ import { useState } from 'react'
 import FilterBar from '../components/FilterBar'
 import ShipCard from '../components/ShipCard'
 import { ships } from '../data/ships'
+import CompareZone from '../components/CompareZone'
+// ...
+<CompareZone />
 
 export default function Catalog() {
   const [filter, setFilter] = useState('all')

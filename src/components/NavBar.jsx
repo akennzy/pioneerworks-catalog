@@ -16,3 +16,8 @@ export default function NavBar() {
     </nav>
   )
 }
+<select onChange={e => localStorage.setItem('lang', e.target.value)} classDefault='pt'>
+  <option value="pt">PT</option>
+  <option value="en">EN</option>
+  <option value="es">ES</option>
+</select>
